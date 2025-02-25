@@ -16,7 +16,7 @@ You can use the following commands to install the environment for DLGEC:
 conda create -n dlgec python==3.8
 conda activate dlgec
 pip install -r requirements.txt
-cd src/src_dlgec/fairseq-0.10.2
+cd src/fairseq-0.10.2
 pip install --editable ./
 ```
 
@@ -35,7 +35,7 @@ BART Model:
 
 
 # How to Train
-If you want to train new models using your own dataset, please follow the instructions in `./bash/chinese_exp`:
+If you want to train new models using your own dataset, please follow the instructions in `./bash/`:
 
 
 + `preprocess_baseline.sh`: preprocess data for training GEC models;
