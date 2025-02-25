@@ -1,0 +1,54 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+
+        {
+            "env": {"CUDA_VISIBLE_DEVICES":"0,1,2,3"},
+            "name": "debug",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/home/liying/zhushichang/mixedit_src/mixedit/models/train.py",
+            "pythonPath": "/home/liying//anaconda3/envs/mixedit/bin/python",
+            "console": "integratedTerminal",
+            "justMyCode": false ,
+            "args": [
+            "/home/liying/zhushichang/mixedit_src/mixedit/preprocess/hsk+lang8/bin",
+            "--save-dir", "/home/liying/zhushichang/mixedit_src/mixedit//exps/bart",
+            "--user-dir", "/home/liying/zhushichang/mixedit_src/mixedit//models/bart",
+            "--task", "gec",
+            "--restore-file","/home/shared/models/bart-large-chinese-2/",
+            "--arch", "gec_bart_large",
+            "--skip-invalid-size-inputs-valid-test", 
+            "--reset-lr-scheduler",
+            "--reset-optimizer",
+            "--reset-meters",
+            "--reset-dataloader",
+            "--max-tokens", "2048",
+            "--optimizer", "adam",
+            "--max-source-positions", "1024",
+            "--max-target-positions", "1024",
+            "--lr", "3e-05",
+            "--warmup-updates", "2000",
+            "-s", "src",
+            "-t", "tgt",
+            "--lr-scheduler", "inverse_sqrt",
+            "--criterion", "label_smoothed_cross_entropy",
+            "--label-smoothing", "0.1",
+            "--max-epoch", "60",
+            "--layernorm-embedding",
+            "--share-all-embeddings",
+            "--share-decoder-input-output-embed",
+            "--adam-betas", "[0.9, 0.999]",
+            "--log-format", "tqdm",
+            "--fp16", 
+            "--find-unused-parameters", 
+            "--keep-last-epochs", "10",
+            "--patience", "5",
+            "--seed", "2022"]
+        }
+    ]
+}
